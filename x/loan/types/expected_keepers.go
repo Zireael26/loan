@@ -15,6 +15,7 @@ type AccountKeeper interface {
 type BankKeeper interface {
 	SpendableCoins(ctx sdk.Context, addr sdk.AccAddress) sdk.Coins
 	// Methods imported from bank should be defined here
-	SendCoinsFromAccountToModule(ctx sdk.Context, sender sdk.AccAddress, moduleName string, amount sdk.Coins) error
 	SendCoins(ctx sdk.Context, fromAccount sdk.AccAddress, beneficiaryAccount sdk.AccAddress, amount sdk.Coins) error
+	SendCoinsFromAccountToModule(ctx sdk.Context, sender sdk.AccAddress, moduleName string, amount sdk.Coins) error
+	SendCoinsFromModuleToAccount(ctx sdk.Context, moduleName string, recipientAccount sdk.AccAddress, amount sdk.Coins) error
 }
