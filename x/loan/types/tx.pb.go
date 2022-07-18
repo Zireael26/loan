@@ -227,17 +227,107 @@ func (m *MsgApproveLoanResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgApproveLoanResponse proto.InternalMessageInfo
 
+type MsgRepayLoan struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Id      uint64 `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (m *MsgRepayLoan) Reset()         { *m = MsgRepayLoan{} }
+func (m *MsgRepayLoan) String() string { return proto.CompactTextString(m) }
+func (*MsgRepayLoan) ProtoMessage()    {}
+func (*MsgRepayLoan) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b8f8f93b4237d328, []int{4}
+}
+func (m *MsgRepayLoan) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgRepayLoan) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgRepayLoan.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgRepayLoan) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgRepayLoan.Merge(m, src)
+}
+func (m *MsgRepayLoan) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgRepayLoan) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgRepayLoan.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgRepayLoan proto.InternalMessageInfo
+
+func (m *MsgRepayLoan) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgRepayLoan) GetId() uint64 {
+	if m != nil {
+		return m.Id
+	}
+	return 0
+}
+
+type MsgRepayLoanResponse struct {
+}
+
+func (m *MsgRepayLoanResponse) Reset()         { *m = MsgRepayLoanResponse{} }
+func (m *MsgRepayLoanResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgRepayLoanResponse) ProtoMessage()    {}
+func (*MsgRepayLoanResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b8f8f93b4237d328, []int{5}
+}
+func (m *MsgRepayLoanResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgRepayLoanResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgRepayLoanResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgRepayLoanResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgRepayLoanResponse.Merge(m, src)
+}
+func (m *MsgRepayLoanResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgRepayLoanResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgRepayLoanResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgRepayLoanResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*MsgRequestLoan)(nil), "loan.loan.MsgRequestLoan")
 	proto.RegisterType((*MsgRequestLoanResponse)(nil), "loan.loan.MsgRequestLoanResponse")
 	proto.RegisterType((*MsgApproveLoan)(nil), "loan.loan.MsgApproveLoan")
 	proto.RegisterType((*MsgApproveLoanResponse)(nil), "loan.loan.MsgApproveLoanResponse")
+	proto.RegisterType((*MsgRepayLoan)(nil), "loan.loan.MsgRepayLoan")
+	proto.RegisterType((*MsgRepayLoanResponse)(nil), "loan.loan.MsgRepayLoanResponse")
 }
 
 func init() { proto.RegisterFile("loan/tx.proto", fileDescriptor_b8f8f93b4237d328) }
 
 var fileDescriptor_b8f8f93b4237d328 = []byte{
-	// 285 bytes of a gzipped FileDescriptorProto
+	// 320 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0xcd, 0xc9, 0x4f, 0xcc,
 	0xd3, 0x2f, 0xa9, 0xd0, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0xe2, 0x04, 0x71, 0xf5, 0x40, 0x84,
 	0xd2, 0x04, 0x46, 0x2e, 0x3e, 0xdf, 0xe2, 0xf4, 0xa0, 0xd4, 0xc2, 0xd2, 0xd4, 0xe2, 0x12, 0x9f,
@@ -249,13 +339,15 @@ var fileDescriptor_b8f8f93b4237d328 = []byte{
 	0x66, 0x5e, 0xaa, 0x04, 0x2b, 0x58, 0x16, 0xce, 0x57, 0x92, 0xe0, 0x12, 0x43, 0x75, 0x51, 0x50,
 	0x6a, 0x71, 0x41, 0x7e, 0x5e, 0x71, 0xaa, 0x92, 0x15, 0xd8, 0xad, 0x8e, 0x05, 0x05, 0x45, 0xf9,
 	0x65, 0xa9, 0x04, 0xdc, 0xca, 0xc7, 0xc5, 0x94, 0x99, 0x02, 0x76, 0x27, 0x4b, 0x10, 0x53, 0x66,
-	0x0a, 0xd4, 0x54, 0x24, 0xbd, 0x30, 0x53, 0x8d, 0xe6, 0x33, 0x72, 0x31, 0xfb, 0x16, 0xa7, 0x0b,
-	0x79, 0x73, 0x71, 0x23, 0x07, 0x83, 0xa4, 0x1e, 0x3c, 0x94, 0xf4, 0x50, 0xdd, 0x23, 0xa5, 0x88,
-	0x53, 0x0a, 0x66, 0x28, 0xc8, 0x30, 0x64, 0x77, 0xa2, 0x19, 0x86, 0x24, 0x85, 0x6e, 0x18, 0x16,
-	0x17, 0x3a, 0x69, 0x9f, 0x78, 0x24, 0xc7, 0x78, 0xe1, 0x91, 0x1c, 0xe3, 0x83, 0x47, 0x72, 0x8c,
-	0x13, 0x1e, 0xcb, 0x31, 0x5c, 0x78, 0x2c, 0xc7, 0x70, 0xe3, 0xb1, 0x1c, 0x43, 0x94, 0x20, 0x38,
-	0x62, 0x2b, 0xf4, 0x21, 0xf1, 0x5b, 0x59, 0x90, 0x5a, 0x9c, 0xc4, 0x06, 0x8e, 0x63, 0x63, 0x40,
-	0x00, 0x00, 0x00, 0xff, 0xff, 0xe9, 0xd6, 0x8a, 0x62, 0xf4, 0x01, 0x00, 0x00,
+	0x0a, 0xd4, 0x54, 0x24, 0xbd, 0x70, 0x53, 0x2d, 0xb8, 0x78, 0xc0, 0xf6, 0x15, 0x24, 0x56, 0x92,
+	0x68, 0xa6, 0x18, 0x97, 0x08, 0xb2, 0x4e, 0x98, 0x89, 0x46, 0xcf, 0x18, 0xb9, 0x98, 0x7d, 0x8b,
+	0xd3, 0x85, 0xbc, 0xb9, 0xb8, 0x91, 0x03, 0x56, 0x52, 0x0f, 0x1e, 0xee, 0x7a, 0xa8, 0x3e, 0x94,
+	0x52, 0xc4, 0x29, 0x05, 0x33, 0x14, 0x64, 0x18, 0xb2, 0xcf, 0xd1, 0x0c, 0x43, 0x92, 0x42, 0x37,
+	0x0c, 0x8b, 0x9f, 0x85, 0x5c, 0xb9, 0x38, 0x11, 0x1e, 0x16, 0x47, 0xb7, 0x1c, 0x2a, 0x21, 0x25,
+	0x8f, 0x43, 0x02, 0x66, 0x8c, 0x93, 0xf6, 0x89, 0x47, 0x72, 0x8c, 0x17, 0x1e, 0xc9, 0x31, 0x3e,
+	0x78, 0x24, 0xc7, 0x38, 0xe1, 0xb1, 0x1c, 0xc3, 0x85, 0xc7, 0x72, 0x0c, 0x37, 0x1e, 0xcb, 0x31,
+	0x44, 0x09, 0x82, 0x53, 0x5c, 0x85, 0x3e, 0x24, 0xe1, 0x55, 0x16, 0xa4, 0x16, 0x27, 0xb1, 0x81,
+	0x13, 0x9f, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0x0a, 0x45, 0x05, 0x89, 0x8d, 0x02, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -272,6 +364,7 @@ const _ = grpc.SupportPackageIsVersion4
 type MsgClient interface {
 	RequestLoan(ctx context.Context, in *MsgRequestLoan, opts ...grpc.CallOption) (*MsgRequestLoanResponse, error)
 	ApproveLoan(ctx context.Context, in *MsgApproveLoan, opts ...grpc.CallOption) (*MsgApproveLoanResponse, error)
+	RepayLoan(ctx context.Context, in *MsgRepayLoan, opts ...grpc.CallOption) (*MsgRepayLoanResponse, error)
 }
 
 type msgClient struct {
@@ -300,10 +393,20 @@ func (c *msgClient) ApproveLoan(ctx context.Context, in *MsgApproveLoan, opts ..
 	return out, nil
 }
 
+func (c *msgClient) RepayLoan(ctx context.Context, in *MsgRepayLoan, opts ...grpc.CallOption) (*MsgRepayLoanResponse, error) {
+	out := new(MsgRepayLoanResponse)
+	err := c.cc.Invoke(ctx, "/loan.loan.Msg/RepayLoan", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
 	RequestLoan(context.Context, *MsgRequestLoan) (*MsgRequestLoanResponse, error)
 	ApproveLoan(context.Context, *MsgApproveLoan) (*MsgApproveLoanResponse, error)
+	RepayLoan(context.Context, *MsgRepayLoan) (*MsgRepayLoanResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
@@ -315,6 +418,9 @@ func (*UnimplementedMsgServer) RequestLoan(ctx context.Context, req *MsgRequestL
 }
 func (*UnimplementedMsgServer) ApproveLoan(ctx context.Context, req *MsgApproveLoan) (*MsgApproveLoanResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ApproveLoan not implemented")
+}
+func (*UnimplementedMsgServer) RepayLoan(ctx context.Context, req *MsgRepayLoan) (*MsgRepayLoanResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RepayLoan not implemented")
 }
 
 func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
@@ -357,6 +463,24 @@ func _Msg_ApproveLoan_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_RepayLoan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgRepayLoan)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).RepayLoan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/loan.loan.Msg/RepayLoan",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).RepayLoan(ctx, req.(*MsgRepayLoan))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Msg_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "loan.loan.Msg",
 	HandlerType: (*MsgServer)(nil),
@@ -368,6 +492,10 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ApproveLoan",
 			Handler:    _Msg_ApproveLoan_Handler,
+		},
+		{
+			MethodName: "RepayLoan",
+			Handler:    _Msg_RepayLoan_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -513,6 +641,64 @@ func (m *MsgApproveLoanResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	return len(dAtA) - i, nil
 }
 
+func (m *MsgRepayLoan) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgRepayLoan) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgRepayLoan) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Id != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Id))
+		i--
+		dAtA[i] = 0x10
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgRepayLoanResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgRepayLoanResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgRepayLoanResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintTx(dAtA []byte, offset int, v uint64) int {
 	offset -= sovTx(v)
 	base := offset
@@ -579,6 +765,31 @@ func (m *MsgApproveLoan) Size() (n int) {
 }
 
 func (m *MsgApproveLoanResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgRepayLoan) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	if m.Id != 0 {
+		n += 1 + sovTx(uint64(m.Id))
+	}
+	return n
+}
+
+func (m *MsgRepayLoanResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -981,6 +1192,157 @@ func (m *MsgApproveLoanResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgApproveLoanResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgRepayLoan) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgRepayLoan: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgRepayLoan: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			m.Id = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Id |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgRepayLoanResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgRepayLoanResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgRepayLoanResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:
